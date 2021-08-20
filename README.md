@@ -19,7 +19,7 @@ Version|Date|Author|Comments
 
 - Clone this repository
     ```bash
-    git clone https://github.com/PnP/teams-dev-samples.git
+    git clone https://github.com/mmsharepoint/ResourceSpecificSPO.git
     ```
 - Register an app in Azure AD [also described here](https://mmsharepoint.wordpress.com/2021/08/18/accessing-sharepoint-sites-with-resource-specific-consent-rsc-and-microsoft-graph/#appreg)
   - with client secret
