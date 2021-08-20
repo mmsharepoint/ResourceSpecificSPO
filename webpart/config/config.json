@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "resource-specific-spo-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/resourceSpecificSpo/ResourceSpecificSpoWebPart.js",
+          "manifest": "./src/webparts/resourceSpecificSpo/ResourceSpecificSpoWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ResourceSpecificSpoWebPartStrings": "lib/webparts/resourceSpecificSpo/loc/{locale}.js"
+  }
+}
