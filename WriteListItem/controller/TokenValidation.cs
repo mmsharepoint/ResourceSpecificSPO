@@ -133,8 +133,8 @@ namespace ResourceSpecificSPO.controller
 
     private bool isGroupMember(string groupID)
     {
-      var roleClaims = _claimsPrincipal.Claims.Where(c => c.Type == "groups");
-      if (roleClaims.Any(c => c.Value == groupID))
+      var roleClaims = _claimsPrincipal.Claims.Where(c => c.Type.ToLower() == "groups");
+      if (roleClaims.Any(c => c.Value.ToLower() == groupID.ToLower()))
       {
         return true;
       }

@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using ResourceSpecificSPO.controller;
@@ -58,8 +57,8 @@ namespace ResourceSpecificSPO
         {
           log.LogInformation(c.Type + " : " + c.Value);
         }
-        var roleClaims = y.Claims.Where(c => c.Type == "groups");
-        if (!roleClaims.Any(c => c.Value == appConfig.SecurityGroupID))
+        var roleClaims = y.Claims.Where(c => c.Type.ToLower() == "groups");
+        if (!roleClaims.Any(c => c.Value.ToLower() == appConfig.SecurityGroupID.ToLower()))
         {
           return new ForbidResult();
         }

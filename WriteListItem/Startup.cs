@@ -12,29 +12,18 @@ namespace ResourceSpecificSPO
   {
     public override void Configure(IFunctionsHostBuilder builder)
     {
-      ServicePointManager.Expect100Continue = true;
-      ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
-                                             | SecurityProtocolType.Tls11
-                                             | SecurityProtocolType.Tls12;
+      //ServicePointManager.Expect100Continue = true;
+      //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
+      //                                       | SecurityProtocolType.Tls11
+      //                                       | SecurityProtocolType.Tls12;
 
       var config = builder.GetContext().Configuration;
       var appConfig = new CustomSettings();
       config.Bind(appConfig);
 
       builder.Services.AddSingleton(appConfig);
-      // builder.Services.AddLogging();
       builder.Services.AddScoped<controller.TokenValidation>();
     }
 
-    //public override void ConfigureAppConfiguration(IFunctionsConfigurationBuilder builder)
-    //{
-    //  builder.ConfigurationBuilder
-    //    .AddEnvironmentVariables()
-    //    .Build();
-    //}
-    //public void ConfigureServices(IServiceCollection services)
-    //{
-    //  IdentityModelEventSource.ShowPII = true;
-    //}
   }
 }
