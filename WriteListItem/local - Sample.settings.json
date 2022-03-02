@@ -5,7 +5,11 @@
     "FUNCTIONS_WORKER_RUNTIME": "dotnet",
     "ClientID": "",
     "ClientSecret": "",
-    "Authority": "https://login.microsoftonline.com/<Your_Tenant>"
+    "Authority": "https://login.microsoftonline.com/<Your_Tenant>",
+    "Instance": "https://login.microsoftonline.com/",
+    "TenantId": "949e12b7-531f-4199-bfab-cef8cf875d7a",
+    "Audience": "https://<Your_Azure_Tenant>/<ClientID>",
+    "SecurityGroupID": ""
   },
   "Host": {
     "CORS": "*"
